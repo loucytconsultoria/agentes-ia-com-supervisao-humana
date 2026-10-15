@@ -1,0 +1,25 @@
+# Unidade de usuário (systemd --user) em modelo: uma instância por agente.
+#   cp agente@.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now agente@atendimento agente@comentarios agente@crm
+#   sudo loginctl enable-linger <usuario>    # sem isto os agentes caem ao fechar o SSH
+#
+# Por que tmux: o agente de terminal em modo de canal precisa de um terminal de verdade;
+# chamado direto pelo systemd ele morre na hora reclamando da entrada padrão.
+# Cada agente tem o próprio soquete (-L agente-<nome>), então `tmux ls` puro não os vê:
+# use `tmux -L agente-<nome> ls`.
+
+[Unit]
+Description=Agente de IA %i
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/tmux -L agente-%i new-session -d -s bot %h/bin/iniciar_agente.sh %i
+ExecStop=/usr/bin/tmux -L agente-%i kill-server
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=default.target

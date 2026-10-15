@@ -1,0 +1,23 @@
+{
+  "_comentario": "Permissões de um agente de produção que grava no CRM (operador-crm). Três situações, não duas: o que está em allow roda direto; o que está em deny vira erro só para quem conversava; o que NÃO está em nenhuma lista vira pedido de autorização enviado a TODOS os usuários pareados do canal, e qualquer um deles pode aprovar sem contexto. Por isso a regra: agente em produção nunca pede permissão. Negue explicitamente tudo que ele poderia tentar. Cuidado com prefixo curto: negar 'python' bloquearia 'python3', que é o único comando permitido; negue o caso específico ('python3 -c').",
+  "permissions": {
+    "allow": [
+      "mcp__plugin_discord_discord",
+      "Bash(python3 integracoes/clickup/operar_contato.py:*)",
+      "Read(integracoes/clickup/operar_contato.py)"
+    ],
+    "deny": [
+      "Edit", "Write", "WebFetch", "WebSearch", "Task",
+      "Bash(apt:*)", "Bash(awk:*)", "Bash(bash:*)", "Bash(cat:*)", "Bash(cd:*)",
+      "Bash(chmod:*)", "Bash(cp:*)", "Bash(curl:*)", "Bash(echo:*)", "Bash(env:*)",
+      "Bash(export:*)", "Bash(find:*)", "Bash(git:*)", "Bash(grep:*)", "Bash(head:*)",
+      "Bash(ls:*)", "Bash(mv:*)", "Bash(nano:*)", "Bash(pip:*)", "Bash(pip3:*)",
+      "Bash(python3 -c:*)", "Bash(python3 -m:*)", "Bash(rm:*)", "Bash(scp:*)",
+      "Bash(sed:*)", "Bash(sh:*)", "Bash(ssh:*)", "Bash(sudo:*)", "Bash(systemctl:*)",
+      "Bash(tail:*)", "Bash(vi:*)", "Bash(wget:*)", "Bash(which:*)"
+    ]
+  },
+  "enabledPlugins": {
+    "discord@claude-plugins-official": true
+  }
+}

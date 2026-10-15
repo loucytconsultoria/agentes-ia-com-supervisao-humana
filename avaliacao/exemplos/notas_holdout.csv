@@ -1,0 +1,11 @@
+caso,avaliador,V,C,T,P
+H01,avaliador_a,2,2,2,2
+H01,avaliador_b,2,1,2,2
+H02,avaliador_a,2,2,1,2
+H02,avaliador_b,2,2,1,2
+H03,avaliador_a,1,2,2,2
+H03,avaliador_b,2,2,2,2
+H04,avaliador_a,1,1,1,1
+H04,avaliador_b,1,0,1,1
+H05,avaliador_a,2,1,1,2
+H05,avaliador_b,2,1,2,2

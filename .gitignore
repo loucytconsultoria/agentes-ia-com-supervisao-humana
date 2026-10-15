@@ -1,0 +1,28 @@
+# Segredos e configuração local
+.env
+*.env
+!.env.example
+*token*.txt
+clickup.json
+config.json
+!config.exemplo.json
+.credentials.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Saídas de demonstração e logs
+ops/bot_rascunho/saida_demo/
+*.log
+auditoria*.jsonl
+estado.json
+relatorio*.md
+
+# Dados brutos (nunca versionar corpus, contatos ou exportações)
+dados/
+brutos/
+*.csv
+!avaliacao/exemplos/*.csv

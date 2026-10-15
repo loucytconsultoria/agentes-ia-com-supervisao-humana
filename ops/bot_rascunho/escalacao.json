@@ -1,0 +1,11 @@
+{
+  "_comentario": "Pré-filtro determinístico. O modelo também escala pela persona; isto garante o mínimo mesmo se ele falhar. Termos de exemplo para a campanha fictícia.",
+  "gatilhos": {
+    "imprensa ou pedido de entrevista": ["jornalista", "entrevista", "reportagem", "assessoria de imprensa"],
+    "pedido de vaga ou emprego individual (LV3)": ["me arruma uma vaga", "consegue um emprego", "consegue uma vaga", "vaga pro meu", "indicação para emprego"],
+    "vida pessoal ou família": ["marido dela", "filho dela", "filhos dela", "filha dela", "saúde dela", "família dela"],
+    "material atribuído à candidata (possível ataque)": ["print", "áudio dela", "vídeo dela", "vazou"],
+    "mérito jurídico-eleitoral": ["é crime", "é ilegal", "no tse", "do tse", "justiça eleitoral", "denúncia"]
+  },
+  "termos_proibidos_na_saida": ["eu sou a helena", "sou a candidata", "garanto sua vaga", "pronto para publicar"]
+}

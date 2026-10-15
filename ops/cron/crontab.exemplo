@@ -1,0 +1,20 @@
+# Cron do usuário dos agentes. Instalar:  crontab crontab.exemplo   Conferir: crontab -l
+#
+# Os minutos não se cruzam de propósito: barata em 2,12,22..., profunda no minuto 7,
+# pulso às 07h05, reinício às 04h30. Duas rotinas nunca disputam o cadeado sem motivo.
+
+CRON_TZ=America/Sao_Paulo
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+
+# Reinício diário, um agente por vez
+30 4 * * * $HOME/bin/reinicio.sh
+
+# Checagem barata (sem token): serviço, processo, tela, ponte, login
+2,12,22,32,42,52 * * * * $HOME/bin/monitor.sh
+
+# Checagem profunda: pergunta de verdade ao modelo (pega o apagão silencioso)
+7 */2 * * * $HOME/bin/monitor.sh --profundo
+
+# Pulso da manhã: resumo SEMPRE, mesmo com tudo bem (se não chegar, o servidor caiu)
+5 7 * * * $HOME/bin/monitor.sh --pulso

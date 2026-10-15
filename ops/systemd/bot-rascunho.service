@@ -1,0 +1,19 @@
+# Alternativa: o bot Python de ops/bot_rascunho como serviço simples (não precisa de tmux).
+#   cp bot-rascunho.service ~/.config/systemd/user/
+#   systemctl --user enable --now bot-rascunho
+
+[Unit]
+Description=Bot de rascunho com aprovação humana
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/agentes/agentes.env
+WorkingDirectory=%h/agentes-ia-com-supervisao-humana/ops/bot_rascunho
+ExecStart=/usr/bin/python3 bot_discord.py
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=default.target

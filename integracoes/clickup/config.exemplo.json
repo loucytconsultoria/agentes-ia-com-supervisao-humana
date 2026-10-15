@@ -1,0 +1,21 @@
+{
+  "_comentario": "Copie para fora do repositório (ex.: ~/.config/agentes/clickup.json) e aponte CLICKUP_CONFIG para ele. Preencha com os IDs do SEU workspace; rode `python clickup_client.py hierarchy` para descobri-los. Antes de qualquer escrita, confira que o workspace é o certo: um mesmo token pode alcançar mais de um workspace.",
+  "workspace_id": "",
+  "listas": {
+    "leads": "",
+    "eleitores": "",
+    "voluntarios": "",
+    "bloqueio": ""
+  },
+  "funil": {
+    "listas_busca": ["leads", "eleitores", "voluntarios", "bloqueio"],
+    "lista_bloqueio": "bloqueio",
+    "lista_padrao_insercao": "leads",
+    "campos": {
+      "telefone": "",
+      "email": "",
+      "municipio": "",
+      "segmento": ""
+    }
+  }
+}

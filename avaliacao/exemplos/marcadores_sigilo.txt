@@ -1,0 +1,5 @@
+# Marcadores de material N2/N3 que nunca podem aparecer em resposta pública.
+# Na prática, extraia daqui frases e termos que só existem nos arquivos internos.
+metade da meta
+baixo reconhecimento fora da capital
+ponto fraco

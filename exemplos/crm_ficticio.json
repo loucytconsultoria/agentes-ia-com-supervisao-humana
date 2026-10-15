@@ -1,0 +1,18 @@
+{
+  "_comentario": "Contatos FICTÍCIOS para demonstração offline. Telefones com DDD 00 e e-mails no domínio reservado example.org não existem.",
+  "listas": {
+    "leads": [
+      {"id": "t-001", "nome": "Joana Exemplo", "telefone": "(00) 90000-0001", "email": "joana@example.org"},
+      {"id": "t-002", "nome": "Carlos Teste", "telefone": "(00) 90000-0002", "email": ""}
+    ],
+    "eleitores": [
+      {"id": "t-101", "nome": "Marta Ficticia", "telefone": "(00) 90000-0101", "email": "marta@example.org"}
+    ],
+    "voluntarios": [
+      {"id": "t-201", "nome": "Paulo Demonstracao", "telefone": "", "email": "paulo@example.org"}
+    ],
+    "bloqueio": [
+      {"id": "t-901", "nome": "Rita Bloqueada", "telefone": "(00) 90000-0901", "email": "rita@example.org"}
+    ]
+  }
+}
